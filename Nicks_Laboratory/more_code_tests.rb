@@ -1,11 +1,23 @@
-class Aircraft
-  attr_accessor :type, :year
-
-  def initialize(t, y)
-    @type = t
-    @year = y
+class Animal
+  def move
   end
 end
 
-jet = Aircraft.new('Jet', 2002)
-p jet.year
+class Fish < Animal
+  def move
+    puts "swim"
+  end
+end
+
+class Cat < Animal
+  def move
+    puts "walk"
+  end
+end
+
+# Sponges and Corals don't have a separate move method - they don't move
+class Sponge < Animal; end
+class Coral < Animal; end
+
+animals = [Fish.new, Cat.new, Sponge.new, Coral.new]
+animals.each { |animal| animal.move }
