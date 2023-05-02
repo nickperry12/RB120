@@ -1,19 +1,27 @@
-module Mammal
-  class Dog
-    def speak(sound)
-      p "#{sound}"
-    end
-  end
-
-  class Cat
-    def say_name(name)
-      p "#{name}"
-    end
+module Describable
+ def describe_shape
+    "I am a #{self.class} and have #{self.class::SIDES} sides."
   end
 end
 
-buddy  = Mammal::Dog.new
-kitty = Mammal::Cat.new
+class Shape
+  include Describable
 
-buddy .speak('Arf!')
-kitty.say_name('kitty')
+  def self.sides
+    self::SIDES
+  end
+end
+
+class Quadrilateral < Shape
+  SIDES = 4
+
+  def sides
+    SIDES
+  end
+end
+
+class Square < Quadrilateral; end
+
+p Square.sides # => 4
+p Square.new.sides # => 4
+p Square.new.describe_shape # => "I am a Square and have 4 sides."
