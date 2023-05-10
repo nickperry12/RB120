@@ -14,6 +14,7 @@ rules: "These are the rules: The board consists of 9 squares in a 3x3 grid.\n
 \n
 => Get ready to play and good luck!"
 enter_name: "Please enter your name:"
+loading: "Please wait a moment while the game loads..."
 invalid_name: "Invalid input. Please enter a valid name! (Field cannot be left blank)"
 play_again?: "That was a great game! Way to battle it out!\n
 => Would you like to play again?\n
@@ -23,6 +24,8 @@ cpu_wins: "The computer wins... Better luck next time!"
 goodbye: "Thank you for playing Tic Tac Toe, good-bye!"
 invalid_choice: "Hmmm, that doesn't appear to be a valid option. Try again."
 tie: "No one wins, it's a tie!"
+first_move: "The player to make the first move will be "
+player_move: "Current Player Move: "
 another_one: "Great! Get ready to play again!"
 current_score: "The current score is:"
 yes_no: "Invalid input"
