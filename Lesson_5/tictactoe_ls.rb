@@ -286,6 +286,11 @@ class TTTGame
     current_player == CPU_MARKER
   end
 
+  # I extracted the "move" logic from `possible_cpu_moves` into their own
+  # methods to reduce the AbcSize cop. The tradeoff is more lines of code.
+  # Not sure if this was totally necessary or if I should have just disabled
+  # the cop instead.
+
   def cpu_randomly_picks_square
     board[board.unmarked_keys.sample] = cpu.marker
   end
