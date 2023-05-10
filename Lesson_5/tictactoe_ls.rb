@@ -82,7 +82,7 @@ class Board
     nil
   end
 
-  def reset
+  def reset!
     @squares = (1..9).each_with_object(Hash.new) do |num, hsh|
       hsh[num] = Square.new
     end
@@ -269,7 +269,7 @@ class TTTGame
     current_player == HUMAN_MARKER
   end
 
-  def human_moves
+  def human_moves!
     prompt joinor(board.unmarked_keys, ', ', 'or ')
     square = nil
 
@@ -331,7 +331,7 @@ class TTTGame
     end
   end
 
-  def cpu_moves(brd)
+  def cpu_moves!(brd)
     threat_line = cpu.detect_threat(brd.squares)
     win_line = cpu.detect_win(brd.squares)
     possible_cpu_moves(threat_line, win_line)
