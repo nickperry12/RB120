@@ -8,11 +8,14 @@ module Formatable
   end
 
   def joinor(array, delimiter = ', ', word = 'or ')
+    array.map!(&:to_s)
+  
     if array.size > 1
       index = 0
-      until index == array.size - 1
+      loop do
         array[index] += delimiter
         index += 1
+        break if index == array.size - 1
       end
       array.insert(-2, word).join
     else
@@ -40,8 +43,6 @@ class Board
     reset
   end
 
-  # rubocop:disable Metrics/AbcSize
-  # rubocop:disable Metrics/MethodLength
   def draw
     puts ""
     puts "     |     |"
@@ -57,11 +58,9 @@ class Board
     puts "     |     |"
     puts ""
   end
-  # rubocop:enable Metrics/AbcSize
-  # rubocop:enable Metrics/MethodLength
 
-  def []=(num, marker)
-    @squares[num].marker = marker
+  def set_square_at(key, marker)
+    @squares[key].marker = marker
   end
 
   def unmarked_keys
@@ -146,7 +145,11 @@ class Human < Player
     prompt MSG['enter_name']
     loop do
       name = gets.chomp
-      break unless name.gsub(' ', '').nil? || name.gsub(' ', '').empty?
+      if name.gsub(' ', '').nil? || name.gsub(' ', '').empty?
+        prompt MSG['invalid_name']
+      else
+        break
+      end
     end
     self.name = name
   end
@@ -154,33 +157,29 @@ end
 
 class Computer < Player
   def set_name
-    list = ["R2D2", "BD-1", "C3PO", "HAL 9000", "Bender", "RoboCop", "Johnny 5"]
-    self.name = list.sample
+    names = ["R2D2", "BD-1", "C3PO", "HAL 9000", "Bender", "RoboCop", "Johnny 5"]
+    self.name = names.sample
   end
 
   def detect_threat(board)
-    human_marker = TTTGame::HUMAN_MARKER # added for rubocop line length fix
-
     Board::WINNING_LINES.select do |line|
-      board.values_at(*line).map(&:marker).count(human_marker) == 2 &&
+      board.values_at(*line).map(&:marker).count(TTTGame::HUMAN_MARKER) == 2 &&
         board.values_at(*line).map(&:marker).count(' ') == 1
     end.flatten
   end
-
+  
   def detect_win(board)
-    computer_marker = TTTGame::COMPUTER_MARKER # added for rubocop line fix
-
     Board::WINNING_LINES.select do |line|
-      board.values_at(*line).map(&:marker).count(computer_marker) == 2 &&
+      board.values_at(*line).map(&:marker).count(TTTGame::COMPUTER_MARKER) == 2 &&
         board.values_at(*line).map(&:marker).count(' ') == 1
     end.flatten
   end
 
-  def threat_square(line, board)
+  def attack_threat_square(line, board)
     line.select { |square| board[square].marker == Square::INITIAL_MARKER }[0]
   end
 
-  def win_square(line, board)
+  def attack_win_square(line, board)
     line.select { |square| board[square].marker == Square::INITIAL_MARKER }[0]
   end
 end
@@ -222,8 +221,7 @@ class TTTGame
   end
 
   def display_board
-    prompt "#{human.name}'s marker is an X."
-    prompt "#{computer.name}'s marker is a #{computer.marker}."
+    prompt "#{human.name}'s marker is an X. #{computer.name}'s marker is a #{computer.marker}."
     puts ""
     display_score
     puts ""
@@ -231,7 +229,7 @@ class TTTGame
   end
 
   def human_moves
-    prompt joinor(board.unmarked_keys.map(&:to_s), ', ', 'or ')
+    prompt joinor(board.unmarked_keys, ', ', 'or ')
     square = nil
 
     loop do
@@ -240,25 +238,22 @@ class TTTGame
       prompt MSG['invalid_choice']
     end
 
-    board[square] = human.marker
+    board.set_square_at(square, human.marker)
   end
 
-  def computer_decides_move(brd, win_line, threat_line)
-    if threat_line.empty? && win_line.empty? && brd.squares[5].marker == ' '
-      brd[5] = computer.marker
-    elsif !win_line.empty?
-      brd[computer.win_square(win_line, brd.squares)] = computer.marker
-    elsif !threat_line.empty?
-      brd[computer.threat_square(threat_line, brd.squares)] = computer.marker
-    else
-      brd[brd.unmarked_keys.sample] = computer.marker
-    end
-  end
-
-  def computer_moves(brd)
+  def computer_moves(brd) 
     threat_line = computer.detect_threat(brd.squares)
     win_line = computer.detect_win(brd.squares)
-    computer_decides_move(brd, win_line, threat_line)
+    # binding.pry
+    if threat_line.empty? && win_line.empty? && brd.squares[5].marker == ' '
+      brd.set_square_at(5, computer.marker)
+    elsif !win_line.empty?
+      brd.set_square_at(computer.attack_win_square(win_line, brd.squares), computer.marker)
+    elsif !threat_line.empty?
+      brd.set_square_at(computer.attack_threat_square(threat_line, brd.squares), computer.marker)
+    else
+      brd.set_square_at(brd.unmarked_keys.sample, computer.marker)
+    end
   end
 
   def display_result
@@ -286,6 +281,7 @@ class TTTGame
 
   def display_score
     prompt MSG['current_score']
+    puts ""
     prompt "#{human.name}: #{human.wins} wins, #{human.losses} losses."
     prompt "#{computer.name}: #{computer.wins} wins, #{computer.losses} losses."
   end
@@ -308,7 +304,7 @@ class TTTGame
     in_game = true
 
     until in_game == false
-      clear_screen_display_board
+      display_board
 
       loop do
         human_moves
@@ -317,11 +313,17 @@ class TTTGame
         break if board.someone_won? || board.full?
         clear_screen_display_board
       end
-      display_result
       update_score
+      display_result
       in_game = false unless play_again?
       reset unless in_game == false
     end
+  end
+
+  def game_loading
+    prompt "Please wait a moment while the game loads..."
+    sleep(5)
+    system 'clear'
   end
 
   def game_setup
@@ -332,6 +334,7 @@ class TTTGame
 
   def play
     game_setup
+    game_loading
     main_game_loop
     display_goodbye_message
   end
