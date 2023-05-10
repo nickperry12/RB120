@@ -1,4 +1,3 @@
-require 'pry'
 require 'yaml'
 MSG = YAML.load_file('tictactoemsgs.yml')
 
