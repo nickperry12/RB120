@@ -33,7 +33,7 @@ class Board
 
   def initialize
     @squares = {}
-    reset
+    reset!
   end
 
   # rubocop:disable Metrics/AbcSize
@@ -339,10 +339,10 @@ class TTTGame
 
   def current_player_moves
     if cpu_turn?
-      cpu_moves(board)
+      cpu_moves!(board)
       @current_player = HUMAN_MARKER
     elsif human_turn?
-      human_moves
+      human_moves!
       @current_player = CPU_MARKER
     end
   end
@@ -386,8 +386,8 @@ class TTTGame
     state_first_player
   end
 
-  def reset
-    board.reset
+  def reset_board!
+    board.reset!
     clear_screen
   end
 
@@ -407,7 +407,7 @@ class TTTGame
       display_result
       break unless play_again?
       confirm_play_again_message
-      reset
+      reset_board!
     end
   end
 end
