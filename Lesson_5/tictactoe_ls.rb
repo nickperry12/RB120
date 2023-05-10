@@ -244,11 +244,11 @@ class TTTGame
   def computer_moves(brd) 
     threat_line = computer.detect_threat(brd.squares)
     win_line = computer.detect_win(brd.squares)
-    
+    # binding.pry
     if threat_line.empty? && win_line.empty? && brd.squares[5].marker == ' '
       brd.set_square_at(5, computer.marker)
     elsif !win_line.empty?
-      brd.set_square_at(computer.attack_win_square(threat_line, brd.squares), computer.marker)
+      brd.set_square_at(computer.attack_win_square(win_line, brd.squares), computer.marker)
     elsif !threat_line.empty?
       brd.set_square_at(computer.attack_threat_square(threat_line, brd.squares), computer.marker)
     else
