@@ -1,0 +1,29 @@
+welcome: "Welcome to Tic Tac Toe!"
+rules: "These are the rules: The board consists of 9 squares in a 3x3 grid.\n
+=> Each player will have their own marker:\n
+=> The player marker is 'X' and the computer marker is 'O'.\n
+=> Each player will then take turns placing their marker in an empty square.\n
+\n
+=> The player to make the first move will be randomized at the start of each game. \n
+=> In order to win the game, a player must place their marker in 3 consecutive\n
+=> squares, either vertically, horizontally, or diagonally.\n
+\n
+=> If the board is filled with neither player filling 3 consecutive\n
+=> squares, it's a tie!\n
+\n
+\n
+=> Get ready to play and good luck!"
+enter_name: "Please enter your name:"
+invalid_name: "Invalid input. Please enter a valid name! (Field cannot be left blank)"
+play_again?: "That was a great game! Way to battle it out!\n
+=> Would you like to play again?\n
+=> Please enter either '(y)es' or '(n)o'."
+player_wins: "You win! Congratuations!"
+cpu_wins: "The computer wins... Better luck next time!"
+goodbye: "Thank you for playing Tic Tac Toe, good-bye!"
+invalid_choice: "Hmmm, that doesn't appear to be a valid option. Try again."
+tie: "No one wins, it's a tie!"
+another_one: "Great! Get ready to play again!"
+current_score: "The current score is:"
+yes_no: "Invalid input"
+goodbye: "Thank you for playing Tic Tac Toe! Have a great day and we'll see you next time!"
