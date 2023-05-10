@@ -307,8 +307,8 @@ class TTTGame
   # an attempt to appeas the `rubocop AbcSize` cop. I think it's a bit redundant
   # but did so anyway
 
-  def check_for_square_5(brd, threat_line, win_line)
-    threat_line.empty? && win_line.empty? && brd.squares[5].marker == ' '
+  def check_for_square_5(threat_line, win_line)
+    threat_line.empty? && win_line.empty? && board.squares[5].marker == ' '
   end
 
   def check_for_possible_win(win_line)
@@ -320,7 +320,7 @@ class TTTGame
   end
 
   def possible_cpu_moves(threat_line, win_line)
-    if check_for_square_5(board, threat_line, win_line)
+    if check_for_square_5(threat_line, win_line)
       cpu_place_piece_at_5
     elsif check_for_possible_win(win_line)
       cpu_mark_win_square(win_line)
