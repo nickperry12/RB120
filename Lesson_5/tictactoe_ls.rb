@@ -244,6 +244,7 @@ class TTTGame
   def computer_moves(brd) 
     threat_line = computer.detect_threat(brd.squares)
     win_line = computer.detect_win(brd.squares)
+    
     if threat_line.empty? && win_line.empty? && brd.squares[5].marker == ' '
       brd.set_square_at(5, computer.marker)
     elsif !win_line.empty?
@@ -253,7 +254,6 @@ class TTTGame
     else
       brd.set_square_at(brd.unmarked_keys.sample, computer.marker)
     end
-
   end
 
   def display_result
