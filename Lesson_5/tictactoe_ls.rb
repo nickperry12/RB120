@@ -313,11 +313,17 @@ class TTTGame
         break if board.someone_won? || board.full?
         clear_screen_display_board
       end
-      display_result
       update_score
+      display_result
       in_game = false unless play_again?
       reset unless in_game == false
     end
+  end
+
+  def game_loading
+    prompt "Please wait a moment while the game loads..."
+    sleep(5)
+    system 'clear'
   end
 
   def game_setup
@@ -328,6 +334,7 @@ class TTTGame
 
   def play
     game_setup
+    game_loading
     main_game_loop
     display_goodbye_message
   end

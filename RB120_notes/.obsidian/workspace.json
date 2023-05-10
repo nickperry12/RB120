@@ -1,0 +1,215 @@
+{
+  "main": {
+    "id": "63902f05b0abbd8b",
+    "type": "split",
+    "children": [
+      {
+        "id": "ebbfedf99a501e83",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7060c4598dd2b797",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "RB120_Lesson_3/Pasted image 20230427162223.png"
+              }
+            }
+          },
+          {
+            "id": "b35075c80a2a18b9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "RB120_Lesson_1/1.Object Oriented Programming Book (Lesson 1).md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c5cc85f973e9ba7f",
+    "type": "split",
+    "children": [
+      {
+        "id": "643d250683b7d4e1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7c138ad7a6c56744",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "13c56486d67c0e97",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "7d9a243b5e31aeae",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "bd379e561b8b9bcc",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 251.5
+  },
+  "right": {
+    "id": "05b10ff09f8aa375",
+    "type": "split",
+    "children": [
+      {
+        "id": "d95e016d0252395e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "20efc0c09862eb48",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "RB120_Lesson_1/1.Object Oriented Programming Book (Lesson 1).md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0aa5d54223367142",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "RB120_Lesson_1/1.Object Oriented Programming Book (Lesson 1).md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5df528690a78893d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "37aaabc6909c0af4",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "RB120_Lesson_1/1.Object Oriented Programming Book (Lesson 1).md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "canvas:Create new canvas": false,
+      "graph:Open graph view": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "b35075c80a2a18b9",
+  "lastOpenFiles": [
+    "RB120_Lesson_1/5.Inheritance.md",
+    "RB120_Lesson_1/1.Object Oriented Programming Book (Lesson 1).md",
+    "RB120_Lesson_1/2.Classes and Objects - Part 1.md",
+    "RB120_Lesson_1/3.Classes and Objects - Part II.md",
+    "RB120_Lesson_2/4.Lecture - Collaborator Objects.md",
+    "RB120_Lesson_1/4.Assignment 4 - Attributes.md",
+    "RB120_Lesson_2/2.Lecture - Inheritance.md",
+    "RB120_Lesson_2/1.Lecture - Classes and Objects.md",
+    "RB120_Lesson_3/3.Inheritance and Variable Scope.md",
+    "RB120_Lesson_3/2.Variable Scope.md",
+    "RB120_Lesson_3/4.Fake Operators.md",
+    "RB120_Lesson_2/6.Coding Tips.md",
+    "RB120_Lesson_5/Tic Tac Toe Planning Stage.md",
+    "RB120_Lesson_3/Pasted image 20230427162223.png",
+    "RB120_Lesson_5",
+    "RB120_Lesson_2/5.Lecture - Modules.md",
+    "RB120_Lesson_2/3.Lecture - Polymorphism and Encapsulation.md",
+    "RB120_Lesson_3/5.Exceptions.md",
+    "RB120_Lesson_3/1.Equivalence.md",
+    "RB120_Lesson_2/table.png",
+    "RB120_Lesson_1/6.Lesson 1 Summary.md",
+    "RB120_Lesson_3",
+    "RB120_Lesson_2/Pasted image 20230424175848.png",
+    "RB120_Lesson_2/Pasted image 20230424175940.png",
+    "RB120_Lesson_2/Pasted image 20230424180003.png",
+    "RB120_Lesson_2/8.Rubocop - ABC Size.md",
+    "RB120_Lesson_2/7.CRC Cards.md",
+    "RB120_Lesson_2/Pasted image 20230424175913.png",
+    "RB120_Lesson_2/9.Rock, Paper, Scissors - Planning Stage.md",
+    "RB120_Lesson_2/Pasted image 20230417140914.png",
+    "RB120_Lesson_2/Pasted image 20230417140826.png",
+    "RB120_Lesson_2/Pasted image 20230410215523.png",
+    "RB120_Lesson_2/pet_class_hierarchy.jpg.~tmp",
+    "RB120_Lesson_2/pet_class_hierarchy.jpg",
+    "Untitled.canvas",
+    "RB120_Lesson_2",
+    "New folder",
+    "Assignment 4 - Attributes.md",
+    "Inheritance.md",
+    "Classes and Objects - Part II.md",
+    "Classes and Objects - Part 1.md",
+    "Untitled 1.canvas",
+    "RB120_Lesson_1/Untitled.canvas",
+    "RB120_Lesson_1"
+  ]
+}
