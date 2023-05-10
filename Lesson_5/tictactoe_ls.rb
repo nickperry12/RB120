@@ -331,15 +331,15 @@ class TTTGame
     end
   end
 
-  def cpu_moves!(brd)
-    threat_line = cpu.detect_threat(brd.squares)
-    win_line = cpu.detect_win(brd.squares)
+  def cpu_moves!
+    threat_line = cpu.detect_threat(board.squares)
+    win_line = cpu.detect_win(board.squares)
     possible_cpu_moves(threat_line, win_line)
   end
 
   def current_player_moves
     if cpu_turn?
-      cpu_moves!(board)
+      cpu_moves!
       @current_player = HUMAN_MARKER
     elsif human_turn?
       human_moves!
