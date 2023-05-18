@@ -17,6 +17,62 @@ module Formatable
   end
 end
 
+module Displayable
+  def display_welcome_message
+    prompt MSG['welcome']
+    prompt MSG['rules']
+  end
+
+  def display_goodbye_message
+    prompt MSG['goodbye']
+  end
+
+  def display_play_again_message
+    prompt MSG['play_again?']
+  end
+
+  def display_board
+    prompt "#{human.name}'s marker is an X."
+    prompt "#{cpu.name}'s marker is a #{cpu.marker}."
+    puts ""
+    display_score
+    puts ""
+    board.draw
+  end
+
+  def display_result
+    clear_screen_display_board
+    case board.winning_marker
+    when human.marker
+      prompt MSG['player_wins']
+    when cpu.marker
+      prompt MSG['cpu_wins']
+    else
+      prompt MSG['tie']
+    end
+  end
+
+  def display_score
+    prompt MSG['current_score']
+    puts ""
+    prompt "#{human.name}: #{human.wins} wins, #{human.losses} losses."
+    prompt "#{cpu.name}: #{cpu.wins} wins, #{cpu.losses} losses."
+  end
+
+  def confirm_play_again_message
+    prompt MSG['another_one']
+    state_first_player
+    prompt MSG['loading']
+    sleep(5)
+  end
+
+  def state_first_player
+    puts ""
+    prompt MSG['first_move'] + human.name if human_turn?
+    prompt MSG['first_move'] + cpu.name if cpu_turn?
+  end
+end
+
 class Board
   WINNING_LINES = [
     [1, 2, 3],
@@ -180,6 +236,7 @@ end
 
 class TTTGame
   include Formatable
+  include Displayable
 
   HUMAN_MARKER = "X"
   CPU_MARKER = "O"
@@ -206,63 +263,9 @@ class TTTGame
     system "clear"
   end
 
-  def display_welcome_message
-    prompt MSG['welcome']
-    prompt MSG['rules']
-  end
-
-  def display_goodbye_message
-    prompt MSG['goodbye']
-  end
-
-  def display_play_again_message
-    prompt MSG['play_again?']
-  end
-
   def clear_screen_display_board
     clear_screen
     display_board
-  end
-
-  def display_board
-    prompt "#{human.name}'s marker is an X."
-    prompt "#{cpu.name}'s marker is a #{cpu.marker}."
-    puts ""
-    display_score
-    puts ""
-    board.draw
-  end
-
-  def display_result
-    clear_screen_display_board
-    case board.winning_marker
-    when human.marker
-      prompt MSG['player_wins']
-    when cpu.marker
-      prompt MSG['cpu_wins']
-    else
-      prompt MSG['tie']
-    end
-  end
-
-  def display_score
-    prompt MSG['current_score']
-    puts ""
-    prompt "#{human.name}: #{human.wins} wins, #{human.losses} losses."
-    prompt "#{cpu.name}: #{cpu.wins} wins, #{cpu.losses} losses."
-  end
-
-  def confirm_play_again_message
-    prompt MSG['another_one']
-    state_first_player
-    prompt MSG['loading']
-    sleep(5)
-  end
-
-  def state_first_player
-    puts ""
-    prompt MSG['first_move'] + human.name if human_turn?
-    prompt MSG['first_move'] + cpu.name if cpu_turn?
   end
 
   def human_turn?
