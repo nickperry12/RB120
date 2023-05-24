@@ -13,12 +13,12 @@
 # Math.log2(size_of_range).to_i + 1
 
 module Displayable
-  def display_enter_number
-    puts "Enter a number between #{GuessingGame::RANGE.min} and #{GuessingGame::RANGE.max}"
+  def display_enter_number(range)
+    puts "Enter a number between #{range.min} and #{range.max}"
   end
 
-  def display_invalid_guess
-    puts "Invalid guess. Enter a number between #{GuessingGame::RANGE.min} and #{GuessingGame::RANGE.max}"
+  def display_invalid_guess(range)
+    puts "Invalid guess. Enter a number between #{range.min} and #{range.max}"
   end
 
   def display_guesses_remaining(guesses_remaining)
@@ -55,12 +55,12 @@ end
 class Player
   include Displayable
 
-  def player_choice
+  def player_choice(range)
     choice = nil
     loop do
       choice = gets.chomp.to_i
-      break if GuessingGame::RANGE === choice
-      display_invalid_guess
+      break if range === choice
+      display_invalid_guess(range)
     end
     choice
   end
@@ -69,57 +69,48 @@ end
 class GuessingGame
   include Displayable
 
-  attr_reader :target, :player, :remaining_guesses, :guess, :start_range, :end_range
+  attr_reader :target, :player, :guess, :range, :attempts
 
   def initialize(start_range, end_range)
-    @start_range = start_range
-    @end_range = end_range
+    @range = start_range..end_range
     @target = nil
-    @remaining_guesses = nil
     @player = Player.new
+    @attempts = nil
   end
 
-  RANGE = (@@start_range..@@end_range)
-
-  # INITIAL_ATTEMPTS = Math.log2(RANGE.max - RANGE.min).to_i + 1
-
-  def output_range
-    p RANGE
+  def set_number_of_attempts(range)
+    self.attempts = Math.log2(range.max - range.min).to_i + 1
   end
 
   def set_target_num
-    self.target = rand(RANGE)
-  end
-
-  def set_guesses_remaining
-    self.remaining_guesses = INITIAL_ATTEMPTS
+    self.target = rand(range)
   end
 
   def game_setup
     set_target_num
-    set_guesses_remaining
+    set_number_of_attempts(range)
   end
 
   def player_guess
-    player.player_choice
+    player.player_choice(range)
   end
 
   def evaluate_guess(guess)
-    if guess >= target
+    if guess > target
       display_guess_too_high
-    elsif guess <= target
+    elsif guess < target
       display_guess_too_low
     end
   end
 
   def decrement_guess
-    self.remaining_guesses -= 1
+    self.attempts -= 1
   end
 
   def main_game_loop
-    while remaining_guesses > 0
-      display_guesses_remaining(remaining_guesses)
-      display_enter_number
+    while attempts > 0
+      display_guesses_remaining(attempts)
+      display_enter_number(range)
       self.guess = player_guess
       evaluate_guess(guess)
       decrement_guess
@@ -135,13 +126,11 @@ class GuessingGame
 
   private
 
-  attr_writer :target, :remaining_guesses, :guess
+  attr_writer :target, :guess, :attempts
 end
 
-game = GuessingGame.new(501, 1500)
-p game.start_range
-p game.end_range
-p game.output_range
+game = GuessingGame.new(1, 10)
+game.play
 
 # You have 10 guesses remaining.
 # Enter a number between 501 and 1500: 104
