@@ -1,27 +1,27 @@
-class Person
-  attr_reader :hand
-
-  def initialize
-    @hand = []
+# Without adding any methods below, implement a solution; originally by Natalie Thompson, 
+# this version by Oscar Cortes
+class ClassA 
+  attr_reader :field1, :field2
+  
+  def initialize(num)
+    @field1 = "xyz"
+    @field2 = num
   end
 end
 
-class Dealer
-  attr_reader :human
+class ClassB 
+  attr_reader :field1
 
   def initialize
-    @human = Person.new
-  end
-
-  def deal_cards
-    human.hand << [10, 'Hearts']
-  end
-
-  def show_cards
-    human.hand
+    @field1 = "abc"
   end
 end
 
-dealer = Dealer.new
-dealer.deal_cards
-p dealer.show_cards
+
+obj1 = ClassA.new(50)
+obj2 = ClassA.new(25)
+obj3 = ClassB.new
+
+
+p obj1.field2 > obj2.field2
+p obj2.field2 > obj3.field1
