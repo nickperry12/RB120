@@ -1,43 +1,17 @@
-<<<<<<< HEAD
-class Dog
-  def walk
-    "walking"
+def next_bigger_num(num)
+  num_digits = num.digits
+  num_digits = num_digits.sort.reverse
+  max_num = num_digits.join.to_i
+  return -1 if num == num_digits.join.to_i || num_digits.size == 1
+  # n of a range
+  results_arr = []
+  qq = ((num + 1).. max_num).select do |n|
+    n.digits.sort == num.digits.sort
   end
+  qq
 end
-
-class Human
-  def walk
-    "walking"
-  end
-end
-
-[Human.new, Dog.new].each { |obj| puts obj.walk } 
-=======
-# Without adding any methods below, implement a solution; originally by Natalie Thompson, 
-# this version by Oscar Cortes
-class ClassA 
-  attr_reader :field1, :field2
-  
-  def initialize(num)
-    @field1 = "xyz"
-    @field2 = num
-  end
-end
-
-class ClassB 
-  attr_reader :field1
-
-  def initialize
-    @field1 = "abc"
-  end
-end
-
-
-obj1 = ClassA.new(50)
-obj2 = ClassA.new(25)
-obj3 = ClassB.new
-
-
-p obj1.field2 > obj2.field2
-p obj2.field2 > obj3.field1
->>>>>>> c3f215b0347c0b4d81d34c1435dfdb3aef6c47af
+#p next_bigger_num(9) == -1
+p next_bigger_num(12) #== 531
+p next_bigger_num(2017) #== 2071
+#p next_bigger_num(111) == -1
+p next_bigger_num(2027)
