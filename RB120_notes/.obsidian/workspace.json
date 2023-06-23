@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "RB120_Lesson_3/4.Fake Operators.md",
+                "file": "RB120_Lesson_1/1.Object Oriented Programming Book (Lesson 1).md",
                 "mode": "source",
                 "source": false
               }
@@ -213,7 +213,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "RB120_Lesson_3/4.Fake Operators.md",
+                "file": "RB120_Lesson_1/1.Object Oriented Programming Book (Lesson 1).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -230,7 +230,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "RB120_Lesson_3/4.Fake Operators.md",
+                "file": "RB120_Lesson_1/1.Object Oriented Programming Book (Lesson 1).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -253,7 +253,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "RB120_Lesson_3/4.Fake Operators.md"
+                "file": "RB120_Lesson_1/1.Object Oriented Programming Book (Lesson 1).md"
               }
             }
           }
@@ -276,6 +276,7 @@
   },
   "active": "b35075c80a2a18b9",
   "lastOpenFiles": [
+    "RB120_Lesson_3/4.Fake Operators.md",
     "RB120_Lesson_1/1.Object Oriented Programming Book (Lesson 1).md",
     "RB120_Lesson_2/1.Lecture - Classes and Objects.md",
     "RB120_Lesson_2/5.Lecture - Modules.md",
@@ -287,7 +288,6 @@
     "RB120_Lesson_2/4.Lecture - Collaborator Objects.md",
     "RB120_Lesson_2/6.Coding Tips.md",
     "RB120_Lesson_2/8.Rubocop - ABC Size.md",
-    "RB120_Lesson_3/4.Fake Operators.md",
     "RB120_Lesson_1/3.Classes and Objects - Part II.md",
     "RB120_Lesson_3/3.Inheritance and Variable Scope.md",
     "RB120_Lesson_1/4.Assignment 4 - Attributes.md",
