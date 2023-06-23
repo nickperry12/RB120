@@ -8,17 +8,19 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7060c4598dd2b797",
+            "id": "b35075c80a2a18b9",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "RB120_Lesson_3/Pasted image 20230427162223.png"
+                "file": "RB120_Lesson_3/4.Fake Operators.md",
+                "mode": "source",
+                "source": false
               }
             }
           },
           {
-            "id": "b35075c80a2a18b9",
+            "id": "0f8c301ff860a628",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -28,9 +30,116 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "479190713b9360c4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "RB120_Lesson_1/5.Inheritance.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "345dad6fa8368bf7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "RB120_Lesson_2/3.Lecture - Polymorphism and Encapsulation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b8896f1b912aeca4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "RB120_Lesson_2/1.Lecture - Classes and Objects.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ae38addb8655dbd9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "RB120_Lesson_3/1.Equivalence.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "504a2a1a8befa441",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "RB120_Lesson_3/2.Variable Scope.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7810e33a2fd5d0f3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "RB120_Lesson_3/3.Inheritance and Variable Scope.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3f6e3a34792fae85",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "RB120_Lesson_2/3.Lecture - Polymorphism and Encapsulation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "19f32c1088bb40b6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "RB120_Lesson_3/5.Exceptions.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "dfac42d2210e31f4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "RB120_Lesson_2/4.Lecture - Collaborator Objects.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -104,7 +213,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "RB120_Lesson_1/2.Classes and Objects - Part 1.md",
+                "file": "RB120_Lesson_3/4.Fake Operators.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +230,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "RB120_Lesson_1/2.Classes and Objects - Part 1.md",
+                "file": "RB120_Lesson_3/4.Fake Operators.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +253,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "RB120_Lesson_1/2.Classes and Objects - Part 1.md"
+                "file": "RB120_Lesson_3/4.Fake Operators.md"
               }
             }
           }
@@ -167,25 +276,25 @@
   },
   "active": "b35075c80a2a18b9",
   "lastOpenFiles": [
-    "RB120_Lesson_1/3.Classes and Objects - Part II.md",
     "RB120_Lesson_1/1.Object Oriented Programming Book (Lesson 1).md",
-    "RB120_Lesson_2/3.Lecture - Polymorphism and Encapsulation.md",
-    "RB120_Lesson_2/2.Lecture - Inheritance.md",
-    "RB120_Lesson_1/5.Inheritance.md",
-    "RB120_Lesson_1/6.Lesson 1 Summary.md",
-    "RB120_Lesson_1/4.Assignment 4 - Attributes.md",
-    "RB120_Lesson_1/2.Classes and Objects - Part 1.md",
-    "RB120_Lesson_3/4.Fake Operators.md",
-    "RB120_Lesson_2/8.Rubocop - ABC Size.md",
-    "RB120_Lesson_2/6.Coding Tips.md",
-    "RB120_Lesson_2/5.Lecture - Modules.md",
-    "RB120_Lesson_2/4.Lecture - Collaborator Objects.md",
     "RB120_Lesson_2/1.Lecture - Classes and Objects.md",
-    "RB120_Lesson_3/Pasted image 20230427162223.png",
-    "RB120_Lesson_3/5.Exceptions.md",
-    "RB120_Lesson_3/3.Inheritance and Variable Scope.md",
+    "RB120_Lesson_2/5.Lecture - Modules.md",
+    "RB120_Lesson_2/3.Lecture - Polymorphism and Encapsulation.md",
+    "RB120_Lesson_1/5.Inheritance.md",
+    "RB120_Lesson_1/2.Classes and Objects - Part 1.md",
     "RB120_Lesson_3/2.Variable Scope.md",
+    "RB120_Lesson_2/2.Lecture - Inheritance.md",
+    "RB120_Lesson_2/4.Lecture - Collaborator Objects.md",
+    "RB120_Lesson_2/6.Coding Tips.md",
+    "RB120_Lesson_2/8.Rubocop - ABC Size.md",
+    "RB120_Lesson_3/4.Fake Operators.md",
+    "RB120_Lesson_1/3.Classes and Objects - Part II.md",
+    "RB120_Lesson_3/3.Inheritance and Variable Scope.md",
+    "RB120_Lesson_1/4.Assignment 4 - Attributes.md",
     "RB120_Lesson_3/1.Equivalence.md",
+    "RB120_Lesson_3/5.Exceptions.md",
+    "RB120_Lesson_1/6.Lesson 1 Summary.md",
+    "RB120_Lesson_3/Pasted image 20230427162223.png",
     "RB120_Lesson_2/7.CRC Cards.md",
     "RB120_Lesson_1/Pasted image 20230404161852.png",
     "RB120_Lesson_1/Pasted image 20230330140803.png",
